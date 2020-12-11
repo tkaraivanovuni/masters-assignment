@@ -1,0 +1,30 @@
+{
+  "name": "praktikum-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkaraivanovuni/praktikum-assignment.git"
+  },
+  "author": "todor-karaivanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tkaraivanovuni/praktikum-assignment/issues"
+  },
+  "homepage": "https://github.com/tkaraivanovuni/praktikum-assignment#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}

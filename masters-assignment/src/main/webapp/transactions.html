@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Exchange API</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/dist/app.css">
+		
+		<script src="js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </head>
+    <body style="background-color: rgb(220, 220, 220)">
+    
+        <div class="profile-page">
+
+            <div class="container">
+
+                <header>
+                
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white mb-1">
+                        <a class="navbar-brand" href="#">
+                            <img src="./assets/AppIcon.png" alt="Stock Market" class="img-fluid">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="nav navbar-nav navbar-right mr-auto ml-auto">
+                                <li>
+                                    <h1><span>STOCK MARKET EXCHANGE</span></h1>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right ml-auto">
+                                <li class="nav-item active">
+                                <a class="nav-link" href="profile.html">Profile </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="buy.html">Buy Stock </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="transactions.html">Transactions </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#" id="transactions-logout">Logout </a>
+                                </li>
+                            </ul>
+                        </div>
+                      </nav>
+                
+                </header>
+
+                <div class="container">
+                
+                	<div class="transaction-container p-2">
+
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">
+                                    
+                                    	<div class="row">
+                                    		<div class="col-2">
+                                    			<h3 class="panel-title">Transactions</h3>
+                                    		</div>
+                                        	
+                                        	<div class ="col-4 ml-auto">
+                                        		<div class="input-group mb-3">
+											  		<div class="input-group-prepend">
+											    		<span class="input-group-text" id="search-label">Search by User</span>
+											  		</div>
+											  		<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="seach-label" id="search-box">
+												</div>
+                                        	</div>
+                                        	
+                                        	
+                                        </div>
+                                    </div>
+                                    
+                                    <hr>
+                                    
+                                    <div class="transaction-template row p-1 m-1 align-items-center" id="transaction-template">
+            
+							            	<div class="col-2 border-right border-left px-auto">
+							                  <h4 id="trans-id-field"> Trans. ID </h4>
+							                </div>
+							                
+							                <div class="col-2 border-right border-leftt">
+							                  <h4 id="user-id-field"> User ID</h4>
+							                </div>
+							        
+							                <div class="col-2 border-right border-left">
+							                  <h4 id="company-field"> Ticker </h4>
+							                </div>
+							        
+							                <div class="col-2 border-right border-left">
+							                  <h4 id="quantity-field"> Quantity </h4>
+							                </div>
+							                  
+							                <div class="col-2 border-right border-left">
+							                  <h4 id="amount-field"> Amount </h4>
+							                </div>
+							                
+							                <div class="col-2 border-right border-left">
+							                  <span>Arbiter Options</span>
+							                  <button type="button" class="btn btn-secondary" style="display: none">Reject</button>
+							                </div>
+							                
+							        </div>  
+							        
+							        <hr>
+            
+                                    <ul class="list-group" id="transactions-list">  
+                                    
+                                    	                                     
+                    
+                                    </ul>
+    
+                                </div>
+
+                            </div>
+                
+                </div>
+
+                <img src="./assets/FooterGraph.png" alt="Footer" class="img-fluid">
+            
+            </div>
+
+        </div>
+        
+        <script>
+        
+        $(document).ready(function(){
+        	
+           function reverseTransaction(transaction, id){
+      		  $.ajax({
+      			  url: "/transaction/delete",
+      			  method: "DELETE",
+      			  data: {id : id},
+      			  complete: function(data){
+      				  
+      				  if(data.status == 200){
+      					  transaction.remove();
+      				  }else {
+      					  alert("You're not authorized!");
+      				  }
+      				  
+      			  }
+      		  });
+      	   }
+           
+           
+           $("#search-box").keyup(function(){
+        	   
+        	   $('#transactions-list').empty();
+        	   
+        	   searchedUser = $("#search-box").val();
+        	   
+        	   $.ajax({
+        		   url: "/transaction/search",
+        		   method: "GET",
+        		   data: {username : searchedUser},
+        		   success: function(data){
+        			   data.forEach(function (transaction){
+        				   showTransaction(transaction.id, transaction.buyer.username, transaction.company.ticker, transaction.quantity, transaction.amount);
+        			   })
+        		   },fail: function(){
+   	    			  alert("Transactions could not be displayed");
+        		   }
+        	   })
+           })
+      	   
+      		  
+           function displayAllTransactions(){
+      		  $.ajax({
+  	    		  url: "/transaction/all",
+  	    		  method: "GET",
+  	    		  success: function(data){
+  	    			  data.forEach(function (transaction){
+  	    				  console.log(transaction);
+  	    				  showTransaction(transaction.id, transaction.buyer.username, transaction.company.ticker, transaction.quantity, transaction.amount);
+  	    			  });
+  	    		  },fail: function(){
+  	    			  alert("Transactions could not be displayed");
+  	    		  }
+      		  });
+      	    }
+      	 
+        	function showTransaction(id, userId, ticker, quantity, amount){
+                var copiedTransaction = $('#transaction-template').clone();
+            	  
+                copiedTransaction.attr('id', '');
+                copiedTransaction.find('#trans-id-field').text(id);
+                copiedTransaction.find('#user-id-field').text(userId);
+                copiedTransaction.find('#company-field').text(ticker);
+                copiedTransaction.find('#quantity-field').text(quantity);
+                copiedTransaction.find('#amount-field').text(amount);
+                copiedTransaction.find('span').hide();
+                copiedTransaction.find('button').show();
+                
+                copiedTransaction.find('button').click(function(){
+                	reverseTransaction(copiedTransaction, id);
+                });
+
+                $('#transactions-list').prepend(copiedTransaction);
+                
+                copiedTransaction.show();
+                
+            }
+        	
+        	$("#transactions-logout").on("click", function(){
+        		  logout();
+        	});
+        	
+        	displayAllTransactions();
+      		  
+      	  });
+        
+        </script>
+        
+  </body>
+</html>
